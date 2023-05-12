@@ -11,7 +11,7 @@ supervisor=supervise-daemon
 
 command="/usr/bin/dnscrypt-proxy"
 command_args="${DNSCRYPT_OPTS:--config /etc/dnscrypt-proxy/dnscrypt-proxy.toml}"
-command_user="${DNSCRYPT_USER:-dnscrypt}:${DNSCRYPT_GROUP:-dnscrypt}"
+command_user="${DNSCRYPT_PROXY_USER:-dnscrypt}:${DNSCRYPT_PROXY_GROUP:-dnscrypt}"
 command_background="yes"
 
 depend() {
