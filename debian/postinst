@@ -1,6 +1,6 @@
 #! /bin/bash
 
-#   Add dnscrypt-proxy service files to runlevel/boot
+#   Add dnscrypt-proxy service files to runlevel/default
 
 /bin/cp /etc/init.d/dnscrypt-proxy /etc/runlevels/default || true
 
