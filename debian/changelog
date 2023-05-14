@@ -1,7 +1,13 @@
+dnscrypt-openrc (0.0.5)  nitrux; urgency=medium
+
+  * Add script to rc.local.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sun, 14 May 2022 06:05:00 -0500
+
 dnscrypt-openrc (0.0.4)  nitrux; urgency=medium
 
   * Remove depend on dnsmasq.
-47
+
  -- Uri Herrera <uri_herrera@nxos.org>  Sun, 14 May 2022 00:07:00 -0500
 
 dnscrypt-openrc (0.0.3)  nitrux; urgency=medium
