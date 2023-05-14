@@ -16,8 +16,7 @@ command_background="yes"
 
 depend() {
 	use net logger
-	provide dnscrypt
-	before dnsmasq
+	provide dnscrypt-proxy
 }
 
 start_pre() {

@@ -1,3 +1,9 @@
+dnscrypt-openrc (0.0.4)  nitrux; urgency=medium
+
+  * Remove depend on dnsmasq.
+47
+ -- Uri Herrera <uri_herrera@nxos.org>  Sun, 14 May 2022 00:07:00 -0500
+
 dnscrypt-openrc (0.0.3)  nitrux; urgency=medium
 
   * Start service before dnsmasq.
