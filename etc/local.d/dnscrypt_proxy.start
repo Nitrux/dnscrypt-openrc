@@ -1,5 +1,0 @@
-#!/bin/sh
-
-# kill dnsmasq process to free port 53 and retsart dnscrypt-proxy service
-killall -9 dnsmasq
-rc-service dnscrypt-proxy restart

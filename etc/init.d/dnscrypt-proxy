@@ -15,12 +15,14 @@ command_user="${DNSCRYPT_PROXY_USER:-_dnscrypt-proxy}:${DNSCRYPT_PROXY_GROUP:-no
 command_background="yes"
 
 depend() {
-	use net logger
-	provide dnscrypt-proxy
+	before network-manager
+	use networking logger
+	provide dns
 }
 
 start_pre() {
 	checkpath -q -d -m 0775 -o "${command_user}" \
 		/var/cache/"${RC_SVCNAME}" \
 		/var/log/"${RC_SVCNAME}"
+	kill $(lsof -t -i:53)
 }
