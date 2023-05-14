@@ -1,6 +1,6 @@
 dnscrypt-openrc (0.0.3)  nitrux; urgency=medium
 
-  * Start before dnsmasq.
+  * Start service before dnsmasq.
 
  -- Uri Herrera <uri_herrera@nxos.org>  Sat, 13 May 2022 21:07:00 -0500
 
