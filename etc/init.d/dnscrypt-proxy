@@ -2,12 +2,12 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
+supervisor=supervise-daemon
+
 name="dnscrypt-proxy Service"
 description="Service file to start dnscrypt-proxy service"
 
 pidfile="/run/${RC_SVCNAME}.pid"
-
-supervisor=supervise-daemon
 
 command="/usr/sbin/dnscrypt-proxy"
 command_args="${DNSCRYPT_OPTS:--config /etc/dnscrypt-proxy/dnscrypt-proxy.toml}"
@@ -15,14 +15,14 @@ command_user="${DNSCRYPT_PROXY_USER:-_dnscrypt-proxy}:${DNSCRYPT_PROXY_GROUP:-no
 command_background="yes"
 
 depend() {
-	before network-manager
+	before plymouth
+	need network-manager
 	use networking logger
-	provide dns
+	provide dnscrypt
 }
 
 start_pre() {
 	checkpath -q -d -m 0775 -o "${command_user}" \
 		/var/cache/"${RC_SVCNAME}" \
 		/var/log/"${RC_SVCNAME}"
-	kill $(lsof -t -i:53)
 }
