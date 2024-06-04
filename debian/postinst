@@ -1,18 +1,14 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
-#   Add dnscrypt-proxy service files to runlevel/default
+# -- Add dnscrypt service files to runlevel/boot.
 
-/bin/cp /etc/init.d/dnscrypt-proxy /etc/runlevels/default || true
+rc-update add dnscrypt-proxy-openrc default
 
-#   Add dmcrypt service files to runlevel/boot
-
-rc-update add dnscrypt-proxy default
-
-#   Update services list
+# -- Update services list.
 
 rc-update -u
 
-#   Create directories for dnscrypt-proxy and change permissions
+# -- Create directories for dnscrypt-proxy and change permissions.
 
 mkdir -p /var/{cache,log,run}/dnscrypt-proxy
 chown _dnscrypt-proxy:nogroup /var/{cache,log,run}/dnscrypt-proxy
