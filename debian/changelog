@@ -1,6 +1,12 @@
+dnscrypt-openrc (0.0.7)  nitrux; urgency=medium
+
+  * Refactor and rename service files.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 17 Jul 2025 06:12:00 -0500
+
 dnscrypt-openrc (0.0.6)  nitrux; urgency=medium
 
-  * Rename files..
+  * Rename files.
 
  -- Uri Herrera <uri_herrera@nxos.org>  Tue, 04 Jun 2024 05:35:00 -0500
 
