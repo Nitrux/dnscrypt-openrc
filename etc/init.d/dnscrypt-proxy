@@ -16,7 +16,7 @@ command_background="yes"
 
 depend() {
 	before plymouth
-	need network-manager
+	need net
 	use networking logger
 	provide dnscrypt
 }

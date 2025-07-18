@@ -1,8 +1,14 @@
+dnscrypt-openrc (0.0.8)  nitrux; urgency=medium
+
+  * Update service dependency.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 17 Jul 2025 18:13:00 -0500
+
 dnscrypt-openrc (0.0.7)  nitrux; urgency=medium
 
   * Refactor and rename service files.
 
- -- Uri Herrera <uri_herrera@nxos.org>  Thu, 17 Jul 2025 06:12:00 -0500
+ -- Uri Herrera <uri_herrera@nxos.org>  Thu, 17 Jul 2025 18:12:00 -0500
 
 dnscrypt-openrc (0.0.6)  nitrux; urgency=medium
 
