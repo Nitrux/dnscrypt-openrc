@@ -1,26 +1,26 @@
 #!/sbin/openrc-run
 
+description="DNSCrypt client proxy daemon"
+command="/usr/sbin/dnscrypt-proxy"
+command_args="-config /etc/dnscrypt-proxy/dnscrypt-proxy.toml"
+command_user="_dnscrypt-proxy"
 supervisor=supervise-daemon
 
-name="dnscrypt-proxy Service"
-description="Service file to start dnscrypt-proxy service"
-
-pidfile="/run/${RC_SVCNAME}.pid"
-
-command="/usr/sbin/dnscrypt-proxy"
-command_args="${DNSCRYPT_OPTS:--config /etc/dnscrypt-proxy/dnscrypt-proxy.toml}"
-command_user="${DNSCRYPT_PROXY_USER:-_dnscrypt-proxy}:${DNSCRYPT_PROXY_GROUP:-nogroup}"
-command_background="yes"
-
 depend() {
-	before plymouth
 	need net
-	use networking logger
-	provide dnscrypt
+	after localmount
+	provide dnscrypt-proxy
+	use logger
 }
 
 start_pre() {
-	checkpath -q -d -m 0775 -o "${command_user}" \
-		/var/cache/"${RC_SVCNAME}" \
-		/var/log/"${RC_SVCNAME}"
+	if ! getent passwd "${command_user}" >/dev/null; then
+		eerror "User '${command_user}' does not exist. Please create it first."
+		return 1
+	fi
+
+	checkpath --directory --owner "${command_user}" --mode 0755 \
+		/var/cache/dnscrypt-proxy \
+		/var/log/dnscrypt-proxy \
+		/run/dnscrypt-proxy
 }
