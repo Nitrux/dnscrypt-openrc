@@ -2,7 +2,7 @@
 
 description="DNSCrypt client proxy daemon"
 command="/usr/sbin/dnscrypt-proxy"
-command_args="-config /etc/dnscrypt-proxy/dnscrypt-proxy.toml"
+command_args="-config /etc/dnscrypt-proxy/nitrux-dnscrypt-proxy.toml -syslog"
 command_user="_dnscrypt-proxy"
 supervisor=supervise-daemon
 

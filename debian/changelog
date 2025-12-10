@@ -1,3 +1,9 @@
+dnscrypt-openrc (0.1.0)  nitrux; urgency=medium
+
+  * Use our configuration file.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Tue, 09 Dec 2025 22:08:00 -0500
+
 dnscrypt-openrc (0.0.9)  nitrux; urgency=medium
 
   * Use supervise-daemon for daemons.
