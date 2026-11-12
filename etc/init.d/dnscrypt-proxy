@@ -4,9 +4,7 @@ description="DNSCrypt client proxy daemon"
 command="/usr/sbin/dnscrypt-proxy"
 command_args="-config /etc/dnscrypt-proxy/nitrux-dnscrypt-proxy.toml"
 command_user="_dnscrypt-proxy"
-command_background=true
-start_stop_daemon_args="--wait 1000"
-pidfile="/run/dnscrypt-proxy/dnscrypt-proxy.pid"
+supervisor=supervise-daemon
 
 depend() {
 	need net
