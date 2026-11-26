@@ -1,3 +1,9 @@
+dnscrypt-openrc (0.1.4) nitrux; urgency=medium
+
+  * Wait longer for a network route before bootstrapping DNSCrypt.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 25 Nov 2026 18:00:00 -0600
+
 dnscrypt-openrc (0.1.3) nitrux; urgency=medium
 
   * Use the DNSCrypt OpenRC supervisor defaults instead of an unlimited respawn loop.
